@@ -7,6 +7,6 @@ const VaccineCenterSchema = Schema({
     vaccine: { type: String }
   });
   
-  const VaccineCenter = model("Bookings", VaccineCenterSchema);
+  const VaccineCenter = model("vaccinationcenters", VaccineCenterSchema);
   
   module.exports = VaccineCenter;

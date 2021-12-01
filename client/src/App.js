@@ -4,18 +4,24 @@ import Register from "./components/auth/Register"
 import Login from './components/auth/Login';
 import Main from "./components/main/Main"
 import ProtectedRoute from "./components/protectedRoutes/ProtectedRoute"
+import { useState } from "react"
+import GlobalCenterID from "./Helpers/globalCenterID"
 
 
 function App() {
+  const [globalCenterID, setGlobalCenterID] = useState("")
+
   return (
     <Router>
-    <div className="App">
+     <GlobalCenterID.Provider value={{ globalCenterID, setGlobalCenterID }}>
+     <div className="App">
      <Switch>
        <Route exact path="/register" component={Register} />
        <Route exact path="/login" component={Login} />
        <ProtectedRoute exact path="/" component={Main} />
      </Switch>
-    </div>
+     </div>
+     </GlobalCenterID.Provider>
    </Router>
   );
 }

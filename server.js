@@ -38,8 +38,8 @@ const authController = require("./controllers/auth");
 app.use("/api/auth", authController);
 
 // VaccineCenter Route
-const VaccineCenterController = require("./controllers/vaccineCenter");
-app.use("/api/vaccineCenter", VaccineCenterController);
+const VaccineCenterController = require("./controllers/vaccineCenters");
+app.use("/api/vaccineCenters", VaccineCenterController);
 
 // Bookings Route
 // const bookingsController = require("./controllers/bookings");
