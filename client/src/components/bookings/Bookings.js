@@ -9,7 +9,7 @@ const Bookings = (history) => {
  const [center, setCenter] = useState([])
  const [date1, setDate1] = useState(Date)
  const [date2, setDate2] = useState(Date)
- const [time, setTime] = useState("09:00")
+ const [time, setTime] = useState("")
  const [error, setError] = useState("");
 
 
@@ -36,25 +36,14 @@ const Bookings = (history) => {
     }
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:4001/api/bookings/createBooking",
-        {
-          globalCenterID,
-          date1,
-          date2,
-          time
-        },
-        config
-      );
+    axios.post("http://localhost:4001/api/bookings/createBooking", {
+      center: globalCenterID,
+      firstJab: date1,
+      secondJab: date2,
+      timeSlot: time
+    })
 
-      console.log(data);
-
-    //   history.push("/");
     } catch (error) { console.log(error) }
-    //   setError(error.response.data.error);
-    //   setTimeout(() => {
-    //     setError("");
-    //   }, 5000);
     }
 
  
@@ -118,7 +107,7 @@ const Bookings = (history) => {
             required
             id="date2"
             placeholder="2nd Shot"
-            value={dateString2}
+            
             min={dateString2}
             onChange={(event) => setDate2(event.target.value)}
           />
@@ -137,8 +126,9 @@ const Bookings = (history) => {
         <br></br>
 
         <button type="submit" className="btn btn-primary">
-          Submit Booking Details
+            Submit Booking Infomation
         </button>
+          <Link to="/reciept">See Booking</Link>
       </form>
             </div>
         </div>

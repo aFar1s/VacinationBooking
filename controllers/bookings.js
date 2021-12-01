@@ -12,5 +12,13 @@ router.post("/createBooking", async (req, res) => {
         (err) => res.status(400).json("Error " + err))
 })
 
+//* Read ONE 
+router.get("/read/:id", async (req, res) => {
+    await Booking.find({center: req.params.id})
+    .then(
+        (center) => res.json(center))
+    .catch(
+        (err) => res.status(400).json("Error: " + err));
+})
 
 module.exports = router;

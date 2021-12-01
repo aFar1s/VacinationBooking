@@ -7,6 +7,7 @@ import Bookings from "./components/bookings/Bookings"
 import ProtectedRoute from "./components/protectedRoutes/ProtectedRoute"
 import { useState } from "react"
 import GlobalCenterID from "./Helpers/globalCenterID"
+import Reciept from "./components/reciept/Reciept"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
        <Route exact path="/login" component={Login} />
        <ProtectedRoute exact path="/" component={Main} />
        <ProtectedRoute exact path="/bookings" component={Bookings} />
+       <ProtectedRoute exact path="/reciept" component={Reciept} />
      </Switch>
      </div>
      </GlobalCenterID.Provider>
