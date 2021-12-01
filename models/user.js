@@ -17,7 +17,7 @@ const UsersSchema = new mongoose.Schema({
          /S\d\d\d\d\d\d\d[a-zA-Z]/,
          "Please enter a valid NRIC",
      ],
-     select: false
+     select: true
     },
 });
 
