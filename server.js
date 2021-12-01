@@ -35,6 +35,10 @@ connectDB();
 const loginController = require("./controllers/login");
 app.use("/api/login", loginController);
 
+// Bookings Route
+const bookingsController = require("./controllers/bookings");
+app.use("/api/bookings", bookingsController);
+
 // For Heroku
 // app.get("/*", (req, res) => {
 //     res.sendFile(path.join(__dirname, "./client/build", "index.html"));
