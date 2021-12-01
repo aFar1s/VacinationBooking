@@ -17,7 +17,7 @@ const UsersSchema = new mongoose.Schema({
          /S\d\d\d\d\d\d\d[a-zA-Z]/,
          "Please enter a valid NRIC",
      ],
-     select: true
+     select: false
     },
 });
 
@@ -32,7 +32,7 @@ UsersSchema.pre("save", async function (next) {
 });
 
 UsersSchema.methods.matchNric = async function (nric) {
-  return await bcrypt.compare(nric, this.password);
+  return await bcrypt.compare(nric, this.nric);
 };
 
 UsersSchema.methods.getSignedJwtToken = function () {
