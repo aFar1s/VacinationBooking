@@ -1,6 +1,8 @@
 require("dotenv").config({ path: "./config.env" });
 const express = require('express')
 const mongoose = require("mongoose");
+const errorHandler = require("./utility/errorHandler")
+
 
 // CONFIGURATION
 const app = express();
@@ -44,6 +46,9 @@ app.use("/api/bookings", bookingsController);
 //     res.sendFile(path.join(__dirname, "./client/build", "index.html"));
 //   }
 // );
+
+app.use(errorHandler);
+
   
 
 // Listener
