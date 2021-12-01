@@ -37,7 +37,7 @@ const [centerID, setCenterID] = useState("")
                 <h3>Vaccine Available: {center.vaccine}</h3>
                </div>
                {/* <button onClick={() => {updateFriend(friend._id)}}>Select Center</button> */}
-               <Link to="/booking" onClick={() => setGlobalCenterID(center._id)}>Select Center</Link>
+               <Link to="/bookings" onClick={() => setGlobalCenterID(center._id)}>Select Center</Link>
               </div>
             )
           })}
