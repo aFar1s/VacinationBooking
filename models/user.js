@@ -42,6 +42,6 @@ UsersSchema.methods.getSignedJwtToken = function () {
 };
 
 
-const Users = mongoose.model("Users", UsersSchema);
+const Users = mongoose.model("VaxUser", UsersSchema);
 
 module.exports = Users;
