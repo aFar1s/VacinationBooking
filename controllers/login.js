@@ -56,7 +56,7 @@ router.post("/login", async (req, res, next) => {
     }
 
     // Check that NRIC match
-    const isMatch = await user.matchPassword(nric);
+    const isMatch = await user.matchNric(nric);
 
     if (!isMatch) {
       return next(new ErrorResponse("Invalid credentials", 401));
