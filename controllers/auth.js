@@ -43,7 +43,7 @@ router.post("/login", async (req, res, next) => {
 
   // Check if email and password is provided
   if (!name || !nric) {
-    return next(new ErrorResponse("Please provide an email and password", 400));
+    return next(new ErrorResponse("Please provide an Name and NRIC", 400));
   }
 
   try {

@@ -34,8 +34,8 @@ const connectDB = async () => {
 connectDB();
 
 // Login Route
-const loginController = require("./controllers/login");
-app.use("/api/login", loginController);
+const authController = require("./controllers/auth");
+app.use("/api/auth", authController);
 
 // Bookings Route
 const bookingsController = require("./controllers/bookings");
