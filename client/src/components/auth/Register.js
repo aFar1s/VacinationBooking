@@ -29,7 +29,7 @@ const Register = ({history}) => {
 
     try {
       const { data } = await axios.post(
-        "/api/auth/registerUser",
+        "http://localhost:4001/api/auth/registerUser",
         {
           name,
           nric

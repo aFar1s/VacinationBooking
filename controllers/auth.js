@@ -20,7 +20,7 @@ router.post("/registerUser", async (req, res, next) => {
   
       // Create Booking Document
       const bookings = new Bookings({ owner: user._id });
-      await dashboard.save();
+      await bookings.save();
     
       sendToken(user, 200, res);
       console.log([ user, bookings ]);

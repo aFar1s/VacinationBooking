@@ -38,8 +38,8 @@ const authController = require("./controllers/auth");
 app.use("/api/auth", authController);
 
 // Bookings Route
-const bookingsController = require("./controllers/bookings");
-app.use("/api/bookings", bookingsController);
+// const bookingsController = require("./controllers/bookings");
+// app.use("/api/bookings", bookingsController);
 
 // For Heroku
 // app.get("/*", (req, res) => {
