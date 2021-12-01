@@ -48,9 +48,8 @@ router.post("/login", async (req, res, next) => {
 
   try {
     // Check that user exists by email
-    const user = await User.findOne({ name }).select("+password");
+    const user = await User.findOne({ name }).select("+nric");
     console.log(user._id);
-    const wallet = await Wallet.findOne(user._id)
 
     if (!user) {
       return next(new ErrorResponse("Invalid credentials", 401));
