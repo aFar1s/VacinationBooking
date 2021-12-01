@@ -42,8 +42,8 @@ const VaccineCenterController = require("./controllers/vaccineCenters");
 app.use("/api/vaccineCenters", VaccineCenterController);
 
 // Bookings Route
-// const bookingsController = require("./controllers/bookings");
-// app.use("/api/bookings", bookingsController);
+const bookingsController = require("./controllers/bookings");
+app.use("/api/bookings", bookingsController);
 
 // For Heroku
 // app.get("/*", (req, res) => {

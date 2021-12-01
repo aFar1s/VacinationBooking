@@ -1,23 +1,13 @@
 const mongoose = require("mongoose");
 const { Schema, model } = require("mongoose");
 
-let date1 = new Date();
-date1.setDate(date1.getDate() + 30);
-const dateString1 = date1.toISOString().split("T")[0];
-
-let date2 = new Date();
-date2.setDate(date1.getDate() + 60);
-const dateString2 = date2.toISOString().split("T")[0];
-
-
-
 const bookingsSchema = Schema({
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: "Users" },
-  firstJab: { type: Date, default: dateString1 },
-  secondJab: { type: Date, default: dateString2 },
-  vacinationCentre: { type: String }
+  center: { type: mongoose.Schema.Types.ObjectId, ref: "vaccinationcenters" },
+  firstJab: { type: Date },
+  secondJab: { type: Date },
+  timeSlot: { type: String, unique: true }
 });
 
-const Bookings = model("Bookings", bookingsSchema);
+const Bookings = model("SlotBookings", bookingsSchema);
 
 module.exports = Bookings;
