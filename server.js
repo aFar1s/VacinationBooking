@@ -31,9 +31,9 @@ const connectDB = async () => {
 };
 connectDB();
 
-// Friend Routes
-const friendController = require("./controllers/friend");
-app.use("/api/friend", friendController);
+// Login Route
+const loginController = require("./controllers/login");
+app.use("/api/login", loginController);
 
 // For Heroku
 // app.get("/*", (req, res) => {
