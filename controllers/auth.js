@@ -41,13 +41,13 @@ router.post("/registerUser", async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
     const { name, nric } = req.body;
 
-  // Check if email and password is provided
+  // Check if name and nric is provided
   if (!name || !nric) {
     return next(new ErrorResponse("Please provide an Name and NRIC", 400));
   }
 
   try {
-    // Check that user exists by email
+    // Check that user exists by name
     const user = await User.findOne({ name }).select("+nric");
     console.log(user._id);
 
