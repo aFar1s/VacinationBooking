@@ -47,6 +47,7 @@ const Bookings = (history) => {
     }
 
  
+    console.log(date1)
 
  const date1Plus30 = new Date(date1);
  date1Plus30.setDate(date1Plus30.getDate() + 30);
@@ -54,7 +55,6 @@ const Bookings = (history) => {
  console.log(dateString2)
 
 
- console.log(date1)
 
  useEffect(() => {
     axios.get(`http://localhost:4001/api/vaccineCenters/read/${globalCenterID}`)
